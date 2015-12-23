@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<rosparam file="$(find apc_object_detection)/config/object_ids.yaml" command="load" />
+	
+	<node name="apc_object_detection_node" pkg="apc_object_detection" type="apc_object_detection_node" output="screen"/>
+	
+</launch>

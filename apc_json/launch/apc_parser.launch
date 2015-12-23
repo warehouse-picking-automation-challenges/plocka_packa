@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+	<rosparam file="$(find apc_json)/data/test_object_ids.yaml" command="load" />
+	<!--node name="work_order_node" pkg="apc_json" type="apc_parser.py"/-->
+</launch>

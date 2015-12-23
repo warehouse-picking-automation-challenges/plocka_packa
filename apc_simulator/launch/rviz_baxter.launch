@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node pkg="rviz" type="rviz" name="rviz_baxter" args="-d $(find apc_simulator)/cfg/baxter_and_kinect.rviz">
+  </node>
+</launch>

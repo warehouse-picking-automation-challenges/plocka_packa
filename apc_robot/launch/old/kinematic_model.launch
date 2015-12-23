@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+	
+  <include file="$(find apc_baxter)/launch/moveit_planning_context.launch">
+    <arg name="load_robot_description" value="false"/>
+  </include>
+  
+  <node name="kinematic_model" pkg="apc_baxter" type="kinematic_model" respawn="false" output="screen">
+    <rosparam command="load" file="$(find apc_baxter)/cfg/kinematics.yaml"/>
+  </node>
+  
+</launch>
+
+

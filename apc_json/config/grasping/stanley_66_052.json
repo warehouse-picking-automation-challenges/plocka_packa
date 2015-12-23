@@ -1,0 +1,15 @@
+{
+ "name": "stanley_66_052", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "lift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "vacuum"
+  }
+ ]
+}

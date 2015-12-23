@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Load BaseMovement Zone definitions-->
+  <rosparam file="$(find apc_cortex)/conf/zone_definition.yaml" command="load" />
+  <rosparam file="$(find apc_robot)/cfg/gain_definition.yaml" command="load" />
+  <rosparam file="$(find apc_object_detection)/config/object_ids.yaml" command="load" />
+  
+  <include file="$(find apc_json)/launch/grasping.launch">
+  </include>    
+
+  <include file="$(find apc_robot)/launch/apc_robot.launch">
+  </include>
+  
+  <!--include file="$(find apc_pcl)/launch/filter.launch">
+  </include-->
+
+  <include file="$(find apc_shelf)/launch/apc_shelf.launch">
+  </include>
+
+  <!--include file="$(find apc_object_detection)/launch/apc_object_detection.launch">
+  </include-->
+  
+  <include file="$(find apc_marker)/launch/apc_marker.launch">
+  </include>
+
+</launch>

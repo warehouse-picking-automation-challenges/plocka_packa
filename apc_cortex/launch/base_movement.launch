@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+	<rosparam file="$(find apc_cortex)/conf/zone_definition.yaml" command="load" />
+	
+	<node name="base_movement" pkg="apc_cortex" type="apc_cortex_node" output="screen"/>
+</launch>

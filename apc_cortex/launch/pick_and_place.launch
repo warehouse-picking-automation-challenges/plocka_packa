@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <rosparam file="$(find apc_robot)/cfg/robot.yaml" command="load" />
+  <rosparam file="$(find apc_cortex)/conf/living_lab_locations.yaml" command="load" />
+  <rosparam file="$(find apc_cortex)/conf/living_lab_arm_poses.yaml" command="load" />
+  <rosparam file="$(find apc_robot)/cfg/gain_definition.yaml" command="load" />
+
+  <include file="$(find apc_robot)/launch/arms_cartesian.launch">
+  </include>
+
+  <node pkg="pr2_tuckarm" type="tuck_arms.py" name="tuck_arms_app" output="screen">
+  </node>
+  
+  <node name="apc_marker_node" pkg="apc_marker" type="apc_marker_node" output="screen"/>
+
+</launch>

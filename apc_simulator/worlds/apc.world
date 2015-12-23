@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<sdf version="1.3">
+  <world name="apc_world">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    
+    <include>
+        <uri>model://kiva_pod</uri>
+        <name>shelf_1</name>
+        <pose>1.5 0 0 0 0 1.5708</pose>
+    </include>
+    
+    <!-- Objects -->
+    <include>
+        <uri>model://table_small</uri>
+        <name>table_1</name>
+        <pose>-0.9 0 0 0 0 1.5708</pose>
+    </include>
+    
+    <include>
+        <uri>model://wooden_bin</uri>
+        <name>bin_1</name>
+        <pose>-0.9 0 0.62 0 -1.5708 3.1416</pose>
+    </include>       
+    
+    <!-- Kinect -->
+    <include>
+        <uri>model://kinect_model</uri>
+        <name>kinect_1</name>
+        <pose>-1.5 0.0 0.7 0 0 0</pose>
+    </include>     
+    
+  </world>
+</sdf>

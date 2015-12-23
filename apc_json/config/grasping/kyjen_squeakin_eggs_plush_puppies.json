@@ -1,0 +1,15 @@
+{
+ "name": "kyjen_squeakin_eggs_plush_puppies", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "angledLift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

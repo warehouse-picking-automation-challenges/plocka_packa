@@ -1,0 +1,11 @@
+apc: 
+  passthrough_filter: 
+    x:
+      min: -4.0
+      max: -4.0
+    y:
+      min: -4.0
+      max: -4.0
+    z:
+      min: 0.3
+      max: 1.8

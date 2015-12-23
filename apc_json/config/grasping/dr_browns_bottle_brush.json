@@ -1,0 +1,15 @@
+{
+ "name": "dr_browns_bottle_brush", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "lift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "vacuum"
+  }
+ ]
+}

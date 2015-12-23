@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<!-- Launch openni to talk to asus -->
+	<include file="$(find openni2_launch)/launch/openni2.launch" />
+	
+	<!--Set transform between camera and robot -->
+	<!--(r,p,y) = (180,-90,0); running at 49.999Hz -->
+	<node pkg="tf" type="static_transform_publisher" name="hand_to_camera" args="0.0 0.0 0.075 0.707 0.0 0.707 0.0 /right_hand /camera_link 20" />
+		
+	<!-- octomap parameters for moveit -->
+	<group ns="move_group" >
+	      <param name="octomap_frame" type="string" value="camera_link" />
+    	  <param name="octomap_resolution" type="double" value="0.02" />
+		  <rosparam command="load" file="$(find apc_baxter)/cfg/asus_sensor.yaml" />
+	</group>
+
+</launch>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<launch>
+	
+  <arg name="rviz"   default="false" />
+  <arg name="test"   default="false" />
+  
+  <!-- Load robot description (URDF),sematic description (SRDF), and joint limits -->
+  <include file="$(find pr2_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include> 
+  
+<group if="$(arg test)">
+  <!-- The root link base_footprint has an inertia specified in the URDF, but KDL does not support a root link with an inertia.  As a workaround, you can add an extra dummy link to your URDF. -->
+  <node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 odom_combined base_footprint 100" />
+ 
+  <!-- Tool for setting and publishing joint state values for a given URDF -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
+  </node>
+
+  <!-- Publish the state of a robot to tf -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+</group>
+
+  <!-- Not sure if this loads the Kinect--> 
+  <include file="$(find pr2_moveit_config)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+  </include>
+ 
+  <group if="$(arg rviz)">
+    <include file="$(find pr2_moveit_config)/launch/moveit_rviz.launch">
+      <arg name="config" value="true"/>
+    </include>
+  </group>
+
+<group if="$(arg test)">  
+  <include file="$(find pr2_moveit_config)/launch/default_warehouse_db.launch" />
+</group>
+  
+  <!-- Load IKFast solver ? --> 
+  <!-- <rosparam command="load" file="$(find apc_baxter)/cfg/kinematics.yaml"/> --> 
+  
+</launch>

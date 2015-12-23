@@ -1,0 +1,6 @@
+string item
+int16 bin
+string orientation
+---
+string grasp
+string tool

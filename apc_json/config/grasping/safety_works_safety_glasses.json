@@ -1,0 +1,15 @@
+{
+ "name": "safety_works_safety_glasses", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "angledLift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

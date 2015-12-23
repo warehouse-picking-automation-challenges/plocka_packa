@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- ####################################################################################-->
+  <!-- Arguments & Parameters -->
+  
+  <arg name="robot"  default="pr2" />
+  <arg name="kinect" default="false" />
+  <arg name="rviz"   default="false" />
+  <arg name="srdf"   default="true" />
+  <arg name="moveit" default="false" />
+  <arg name="jtController" default="true" />
+  
+  <rosparam file="$(find apc_robot)/cfg/robot.yaml" command="load" />
+  <rosparam file="$(find apc_robot)/cfg/origin_tf_config.yaml" command="load" />
+  
+  <!-- ####################################################################################-->
+  <!-- Robot -->  
+  <node name="origin_tf_publisher_node" pkg="apc_robot" type="origin_tf_publisher" output="screen"/>
+  <node name="apc_base_driver_node" pkg="apc_robot" type="apc_base_driver" output="screen"/>
+  <!-- ####################################################################################-->
+  <group if="$(arg jtController)">
+     <include file="$(find apc_robot)/launch/arms_cartesian.launch" />
+  </group>
+	
+  <!-- ####################################################################################-->
+  <!-- MoveIt -->
+  <group if="$(arg moveit)">
+     <include file="$(find apc_robot)/launch/pr2_moveit.launch">
+       <arg name="rviz" value="false"/>
+     </include> 
+  </group>
+  <!-- Reload the semantic description (it seems to be overwritten somewhere) -->
+  <group if="$(arg srdf)">
+		<param name="robot_description_semantic" textfile="$(find apc_robot)/cfg/$(arg robot).srdf" />
+  </group> 
+    
+  <!-- ####################################################################################-->
+  <!-- Launch Kinect -->
+  <group if="$(arg kinect)">
+     <include file="$(find apc_robot)/launch/pr2_kinect.launch" />
+  </group>
+        
+  <!-- ####################################################################################-->      
+  
+</launch>

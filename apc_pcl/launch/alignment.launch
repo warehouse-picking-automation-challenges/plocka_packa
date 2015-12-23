@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <remap from="input" to="/head_mount_kinect/depth_registered/points"/>
+
+	<rosparam file="$(find apc_pcl)/cfg/passthrough_filter.yaml" command="load" />
+
+    <node name="passthrough_filter_node" pkg="apc_pcl" type="alignment" output="screen"/>
+	
+</launch>

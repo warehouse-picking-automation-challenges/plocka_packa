@@ -1,0 +1,15 @@
+{
+ "name": "champion_copper_plus_spark_plug", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "angledLift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

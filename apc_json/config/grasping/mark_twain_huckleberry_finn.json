@@ -1,0 +1,15 @@
+{
+ "name": "mark_twain_huckleberry_finn", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "lift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "vacuum"
+  }
+ ]
+}

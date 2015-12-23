@@ -1,0 +1,6 @@
+# Direction is defined as
+#  0:FORWARD, 1:BACKWARD, 2:LEFT, 3:RIGHT
+float64 x
+int16 direction		
+---
+bool success

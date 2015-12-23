@@ -1,0 +1,14 @@
+apc_robot:
+  robot:
+#    'baxter'
+   'pr2'
+  baxter:
+    move_group_left: 'left_arm'
+    move_group_right: 'right_arm'
+    gripper_left: 'robot/end_effector/left_gripper/gripper_action'
+    gripper_right: 'robot/end_effector/right_gripper/gripper_action'
+  pr2:
+    move_group_left: 'left_arm'
+    move_group_right: 'right_arm'
+    gripper_left: 'l_gripper_controller/gripper_action'
+    gripper_right: 'r_gripper_controller/gripper_action'

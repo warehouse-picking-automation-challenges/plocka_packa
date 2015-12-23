@@ -1,0 +1,15 @@
+{
+ "name": "expo_dry_erase_board_eraser", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "angledLift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

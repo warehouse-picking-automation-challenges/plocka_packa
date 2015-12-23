@@ -1,0 +1,15 @@
+{
+ "name": "elmers_washable_no_run_school_glue", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "front", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

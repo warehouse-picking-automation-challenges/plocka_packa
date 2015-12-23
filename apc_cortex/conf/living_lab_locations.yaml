@@ -1,0 +1,78 @@
+# To record new locations, use rviz to send 2D nav goals while running "rostopic echo /move_base/goal"
+locations: 
+  number: 6
+  l1:
+    name: start
+    pose: 
+      position: 
+        x: 4.63998126984
+        y: -1.92423832417
+        z: 0.0
+      orientation: 
+        x: 0.0
+        y: 0.0
+        z: -0.0258590603214
+        w: 0.999665598587
+  l2:
+    name: front_table
+    pose: 
+      position: 
+        x: 5.34959554672
+        y: -1.20573580265
+        z: 0.0
+      orientation: 
+        x: 0.0
+        y: 0.0
+        z: 0.648765496209
+        w: 0.760988390798
+  l3:
+    name: front_counter
+    pose: 
+      position: 
+        x: 6.00072383881
+        y: -3.06852197647
+        z: 0.0
+      orientation: 
+        x: 0.0
+        y: 0.0
+        z: -0.79335
+        w: 0.60876
+#        z: -0.765872034249
+#        w: 0.642993022634
+  l4:
+    name: picking_location
+    pose: 
+      position: 
+        x: 7.37109804153
+        y: -3.43531250954
+        z: 0.0
+      orientation: 
+        x: 0.0
+        y: 0.0
+        z: -0.0631765826012
+        w: 0.998002364431
+  l5:
+    name: place_location
+    pose: 
+      position: 
+        x: 7.30593824387
+        y: -3.45023870468
+        z: 0.0
+      orientation: 
+        x: 0.0
+        y: 0.0
+        z: 0.558174000091
+        w: 0.829723921327
+  l6:
+    name: start_location
+    pose: 
+      position: 
+        x: 5.58597326279
+        y: -2.85834789276
+        z: 0.0
+      orientation: 
+        x: 0.0
+        y: 0.0
+        z: -0.0268090110242
+        w: 0.99964057387
+

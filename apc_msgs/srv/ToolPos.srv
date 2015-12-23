@@ -1,0 +1,4 @@
+uint16 marker_num
+---
+geometry_msgs/PoseStamped marker_position
+bool success

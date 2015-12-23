@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<rosparam file="$(find apc_shelf)/conf/shelf_location.yaml" command="load" />
+	
+	<node name="apc_shelf_node" pkg="apc_shelf" type="apc_shelf_node" output="screen"/>
+	
+</launch>

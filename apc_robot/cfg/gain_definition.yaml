@@ -1,0 +1,24 @@
+gain_1:
+  name: initial
+  t_p: 800.0
+  t_d: 15.0
+  r_p: 80.0
+  r_d: 1.2
+gain_2:
+  name: free_space
+  t_p: 800.0
+  t_d: 15.0
+  r_p: 80.0
+  r_d: 1.2
+gain_3:
+  name: approach
+  t_p: 800.0
+  t_d: 15.0
+  r_p: 80.0
+  r_d: 1.2
+gain_4:
+  name: angular
+  t_p: 800.0
+  t_d: 15.0
+  r_p: 80.0
+  r_d: 1.2

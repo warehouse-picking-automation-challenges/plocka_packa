@@ -1,0 +1,7 @@
+float64 vel_lin
+float64 vel_rot
+float64 waitTime
+float64 goalTol
+float64 goalTolR
+---
+bool success

@@ -1,0 +1,15 @@
+{
+ "name": "oreo_mega_stuf", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "angledLiftSide", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

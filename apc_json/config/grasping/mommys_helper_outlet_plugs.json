@@ -1,0 +1,15 @@
+{
+ "name": "mommys_helper_outlet_plugs", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "lift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "vacuum"
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- ####################################################################################-->
+  <!-- Arguments & Parameters -->
+
+  <arg name="rviz" default="false"/>
+  <arg name="tuck" default="false"/>
+  <arg name="world_name" value="shelf"/>
+  <arg name="spawn_objects" default="true" />
+  	
+  <param name="/use_sim_time" value="true" />
+  
+ 
+  <!-- ####################################################################################-->
+  <!-- Start Gazebo world and gui-->
+  
+  <node name="gazebo" pkg="gazebo" type="gazebo" args="-u $(find apc_simulator)/worlds/$(arg world_name).world" respawn="false" output="screen"/>
+  <node name="gazebo_gui" pkg="gazebo" type="gui" respawn="false" output="screen"/>
+  
+  
+  <!-- ####################################################################################-->
+  <!-- Start PR2 robot -->
+  
+  <include file="$(find apc_simulator)/launch/pr2_gazebo_launch/pr2_empty_world_FIXED.launch">
+	    <arg name="world_already_loaded" default="true"/>
+  </include>
+  
+  <group if="$(arg tuck)">
+    <node pkg="pr2_tuckarm" type="tuck_arms.py" args="b" output="screen" name="tuck_arms"/> 
+  </group>
+
+  <!-- ####################################################################################-->
+  <!-- Load objects-->
+
+  <group if="$(arg spawn_objects)">
+
+    <!-- load table description-->
+    <param name="table_description" command="$(find xacro)/xacro.py '$(find gazebo_worlds)/objects/table.urdf.xacro'" />
+    
+    <!-- spawn table -->
+    <node name="spawn_table" pkg="gazebo" type="spawn_model"
+          args="-urdf -param table_description -model table_1 -x -2.0 -y 0.5"
+          respawn="false" output="screen" />
+    
+    <!-- spawn coke can in shelf -->
+    <node name="spawn_object" pkg="gazebo" type="spawn_model" 
+          args="-urdf -file $(find gazebo_worlds)/objects/coke_can.urdf -model coke_can_1 -x 1.38 -y 0.00 -z 1.00" 
+          respawn="false" output="screen" />
+    
+    <!-- spawn coke can on table -->      
+    <node name="spawn_object2" pkg="gazebo" type="spawn_model" 
+          args="-urdf -file $(find gazebo_worlds)/objects/coke_can.urdf -model coke_can_2 -x -0.8 -y 0.7 -z 0.55" 
+          respawn="false" output="screen" />
+   
+   </group>
+
+  <!-- ####################################################################################-->
+  <!-- For visualization-->
+  
+  <group if="$(arg rviz)">
+	<include file="$(find pr2_2dnav)/rviz/rviz_move_base.launch"/> -->
+  </group>
+
+
+  <!-- ####################################################################################-->
+</launch>

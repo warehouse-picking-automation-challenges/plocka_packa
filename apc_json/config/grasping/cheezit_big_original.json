@@ -1,0 +1,15 @@
+{
+ "name": "cheezit_big_original", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "front", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

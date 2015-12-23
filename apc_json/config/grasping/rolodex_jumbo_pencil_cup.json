@@ -1,0 +1,15 @@
+{
+ "name": "rolodex_jumbo_pencil_cup", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "front", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

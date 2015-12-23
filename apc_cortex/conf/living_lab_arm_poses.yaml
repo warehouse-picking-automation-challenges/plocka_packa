@@ -1,0 +1,63 @@
+# Use "rosrun apc_robot print_state" to record a new pose
+poses: 
+  number: 5
+  p1:
+    name: l_start_picking
+    pose:
+      position:
+        x: 0.5
+        y: 0.11971
+        z: 0.954537
+      orientation:
+        x: -0.0203556
+        y: -0.00229056
+        z: -0.0366999
+        w: 0.999116
+  p2:
+    name: l_start_placing
+    pose:
+      position:
+        x: 0.5
+        y: 0.11971
+        z: 0.80
+      orientation:
+        x: -0.0203556
+        y: -0.00229056
+        z: -0.0366999
+        w: 0.999116
+  p3:
+    name: l_untuck
+    pose:
+      position:
+        x: 0.473873
+        y: 0.149668
+        z: 1.03574
+      orientation:
+        x: 0.422965
+        y: -0.600993
+        z: -0.193701
+        w: 0.649913
+  p4:
+    name: l_pick
+    pose:
+      position:
+        x: 0.5
+        y: 0.11971
+        z: 0.91
+      orientation:
+        x: -0.0203556
+        y: -0.00229056
+        z: -0.0366999
+        w: 0.999116
+  p5:
+    name: l_place
+    pose:
+      position:
+        x: 0.4
+        y: 0.4
+        z: 0.65
+      orientation:
+        x: -0.0203556
+        y: -0.00229056
+        z: -0.0366999
+        w: 0.999116

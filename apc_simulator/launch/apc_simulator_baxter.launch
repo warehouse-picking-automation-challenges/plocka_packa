@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- ####################################################################################-->
+  <!-- Arguments & Parameters -->
+
+  <arg name="rviz" default="false"/>
+  <arg name="tuck" default="false"/>
+  <arg name="world_name" value="apc"/>
+  <arg name="spawn_objects" default="true" />
+  <arg name="spawn_robot" default="true" />
+  <arg name="kinect" default="true" />
+  	
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+ 
+  <!-- ####################################################################################-->
+  <!-- Start Gazebo world and gui-->
+  
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!--<arg name="world_name" value="$(find baxter_gazebo)/worlds/baxter.world"/> -->
+    <arg name="world_name" value="$(find apc_simulator)/worlds/$(arg world_name).world"/>
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="headless" value="$(arg headless)"/>
+  </include>
+  
+  <!-- ####################################################################################-->
+  <!-- Start robot -->
+  <group if="$(arg spawn_robot)">
+	  
+		<!-- Load the URDF into the ROS Parameter Server -->
+	  <param name="robot_description"
+		 command="cat '$(find baxter_description)/urdf/baxter.urdf'" />
+
+	  <!-- Load the software version into the ROS Parameter Server -->
+	  <param name="rethink/software_version" value="1.0.0" />
+
+	  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+	   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+		args="-file $(find baxter_description)/urdf/baxter.urdf -urdf -x 0.30 -z 0.93 -model baxter
+			  -J baxter::right_s0 -0.272659
+			  -J baxter::right_s1 1.04701
+			  -J baxter::right_e0 -0.00123203
+			  -J baxter::right_e1 0.49262
+			  -J baxter::right_w0 -0.0806423
+			  -J baxter::right_w1 -0.0620532
+			  -J baxter::right_w2 0.0265941
+			  -J baxter::left_s0 0.192483
+			  -J baxter::left_s1 1.047
+			  -J baxter::left_e0 0.000806359
+			  -J baxter::left_e1 0.491094
+			  -J baxter::left_w0 -0.178079
+			  -J baxter::left_w1 -0.0610333
+			  -J baxter::left_w2 -0.0124707" />
+
+	  <!-- ros_control baxter launch file -->
+	  <include file="$(find baxter_sim_hardware)/launch/baxter_sdk_control.launch" />
+
+  </group>
+  <!-- ####################################################################################-->
+  <!-- Load objects-->
+
+  <group if="$(arg spawn_objects)">
+            
+	<!-- Spawn objects after a delay -->
+	<node pkg="apc_simulator" type="timed_roslaunch.sh" 
+		args="5 apc_simulator spawn_objects.launch" 
+		name="timed_roslaunch" output="screen">
+	</node>          
+                   
+  </group>
+  
+  <!-- ####################################################################################-->
+  <!-- Kinect transform -->
+  <group if="$(arg kinect)">
+	
+	<!-- <node pkg="tf" type="static_transform_publisher" name="base_link_to_base" args="-0.05 -0.2 1.6 0 -1.57 1.57 /base_link /base 100" /> -->
+	<node name="kinect_tf_node" pkg="apc_simulator" type="kinect_tf_publisher" respawn="true" output="screen"/>
+  
+  </group>
+  
+  <!-- ####################################################################################-->
+  <!-- For visualization-->
+  
+  <group if="$(arg rviz)">
+	<include file="$(find apc_simulator)/launch/rviz_baxter.launch"/> -->
+  </group>
+
+
+  <!-- ####################################################################################-->
+</launch>

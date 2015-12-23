@@ -1,0 +1,30 @@
+# The network
+10.68.0.100 lan-dhcp-start
+10.68.0.199 lan-dhcp-end
+
+# The first computer
+10.68.0.1 pr2c1 c1 c1-lan0 pr2c1-lan0
+10.69.0.11 c1-lan1
+10.68.0.21 c1-lan2 pr2c1-lan2
+10.68.0.31 c1-lan3 pr2c1-lan3
+10.68.0.91 c1-esms pr2c1-esms
+
+# The second computer
+10.68.0.2 pr2c2 c2 c2-lan0 pr2c2-lan0
+10.69.0.12 c2-lan1
+10.68.0.92 c2-esms pr2c2-esms
+
+# The wireless router
+10.68.0.5 wifi-router
+
+# The wireless access point
+10.68.0.250 wap
+
+# The ip addresses of the basestation
+10.68.0.6 basestation-local
+10.69.0.6 basestation-local2
+#129.107.3.141 basestation-novpn
+10.68.255.1 basestation utaripr2basestation
+
+
+# sudo /etc/init.d/networking restart

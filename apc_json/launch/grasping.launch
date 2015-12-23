@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="grasping_strategy_node" pkg="apc_json" type="grasping_json_server.py" />
+</launch>

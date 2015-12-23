@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>apc_msgs</name>
+  <version>0.0.0</version>
+  <description>ROS package with common messages used for the APC.</description>
+  <maintainer email="sven.cremer@mavs.uta.edu">Sven Cremer</maintainer>
+  <license>BSD</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
+  
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
+
+  <build_depend>message_generation</build_depend>
+  <run_depend>message_runtime</run_depend> 
+</package>

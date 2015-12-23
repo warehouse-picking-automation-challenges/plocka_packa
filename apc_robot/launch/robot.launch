@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<launch>
+  <rosparam file="$(find apc_robot)/cfg/robot.yaml" command="load" />
+  <node name="joint_states_listener_node" pkg="apc_robot" type="joint_states_listener.py" output="screen"/>
+</launch>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package>
+  <name>apc_workspace</name>
+  <version>0.0.0</version>
+  <description>The apc_workspace package which contains the different workspace configurations.</description>
+
+  <maintainer email="isura@ieee.org">Isura Ranatunga</maintainer>
+  <author email="sven.cremer@mavs.uta.edu">Sven Cremer</author>
+  
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+ 
+  <node name="apc_testing_node" pkg="apc_baxter" type="testing_node" output="screen">
+	<remap from="/joint_states" to="/robot/joint_states" />
+  </node>
+   
+</launch>

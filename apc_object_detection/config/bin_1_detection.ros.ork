@@ -1,0 +1,41 @@
+# info about the db
+
+#source1:
+#  type: 'OpenNI'
+#  module: 'object_recognition_core.io.source'
+#  parameters:
+#    image_mode: 'SXGA_RES'
+#    depth_mode: 'VGA_RES'
+#    image_fps: 'FPS_15'
+#    depth_fps: 'FPS_30'
+
+source1:
+  type: RosKinect
+  module: 'object_recognition_ros.io'
+  parameters:
+    rgb_frame_id: 'camera_rgb_optical_frame'
+    rgb_camera_info: '/camera/rgb/camera_info'
+    rgb_image_topic: '/camera/rgb/image_raw'
+    depth_image_topic: '/camera/depth/image_raw'
+    depth_camera_info: '/camera/depth/camera_info'
+#  bag: /home/vrabaud/tod_data_new/training/object_recognition_capture/eggo_01.bag
+
+sink1:
+  type: Publisher
+  module: 'object_recognition_ros.io'
+  inputs: [source1]
+
+pipeline1:
+  type: LinemodDetector
+  module: 'object_recognition_linemod'
+  inputs: [source1]
+  outputs: [sink1]
+  parameters:
+    # The list of object_ids to analyze
+    #object_ids: 'all'
+    threshold: 95.4
+    object_ids: ['adb0cf025e87d1fd3726ef5128017e99']
+    db:
+      type: 'CouchDB'
+      root: 'http://localhost:5984'
+      collection: 'object_recognition'

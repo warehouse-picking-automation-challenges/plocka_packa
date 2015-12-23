@@ -1,0 +1,15 @@
+{
+ "name": "paper_mate_12_count_mirado_black_warrior", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "lift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "vacuum"
+  }
+ ]
+}

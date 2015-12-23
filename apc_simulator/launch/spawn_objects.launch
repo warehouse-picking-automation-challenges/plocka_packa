@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+   <!-- spawn coke can in shelf -->
+    <node name="spawn_object" pkg="gazebo" type="spawn_model" 
+          args="-urdf -file $(find gazebo_worlds)/objects/coke_can.urdf -model coke_can_1 -x 1.38 -y 0.00 -z 1.00" 
+          respawn="false" output="screen" />
+    
+    <!-- spawn coke can on table -->      
+    <node name="spawn_object2" pkg="gazebo" type="spawn_model" 
+          args="-urdf -file $(find gazebo_worlds)/objects/coke_can.urdf -model coke_can_2 -x -0.8 -y 0.7 -z 0.55" 
+          respawn="false" output="screen" />
+          
+</launch>

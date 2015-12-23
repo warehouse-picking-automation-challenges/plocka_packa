@@ -1,0 +1,15 @@
+{
+ "name": "first_years_take_and_toss_straw_cup", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "front", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

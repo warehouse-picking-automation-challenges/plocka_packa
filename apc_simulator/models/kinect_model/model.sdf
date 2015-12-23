@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="kinect_model">
+
+  <static>true</static>
+ 
+  <link name="kinect::link">
+	 
+	 <!-- <pose>0.2 0 0.265 0 0 0</pose> -->
+      <inertial>
+        <mass>0.1</mass>
+      </inertial>
+	 
+	 <collision name="collision">
+		 <geometry>
+			 <box> <size>0.073000 0.276000 0.072000</size> </box>
+		 </geometry>
+	</collision>
+	
+	<visual name="visual">
+		<geometry>
+			<mesh>
+				<uri>model://kinect/meshes/kinect.dae</uri>
+			</mesh>
+		</geometry>
+	</visual>
+ 
+	<sensor name="kinect_camera1" type="depth">
+		<always_on>1</always_on>
+        <visualize>true</visualize>
+        <update_rate>30.0</update_rate>
+        <topic>camera</topic>
+    
+		<camera name="depth_cam">
+			 <horizontal_fov>1.3962634</horizontal_fov>
+			<image>
+				<width>800</width>
+				 <height>800</height>
+				<format>R8G8B8</format>
+			 </image>
+			<clip>
+				<near>0.02</near>
+				<far>3</far>
+			</clip>
+			<noise>
+				 <type>gaussian</type>
+					<!-- Noise is sampled independently per pixel on each frame.  
+					That pixel's noise value is added to each of its color
+					channels, which at that point lie in the range [0,1]. -->
+				<mean>0.0</mean>
+				<stddev>0.007</stddev>
+			 </noise>
+			<save enabled=true>  <!-- Don't know what this is -->
+				<path>Gazebo_camera</path>
+			</save>
+		</camera>
+		
+		  <plugin name="camera_controller" filename="libDepthCameraPlugin.so">
+			<CxPrime>0</CxPrime>
+			<updateRate>10.0</updateRate>
+			<cameraName>depth_cam1</cameraName>
+			<frameName>/base_link</frameName>
+			<hackBaseline>0.07</hackBaseline>
+			<distortionK1>1.0</distortionK1>
+			<distortionK2>1.0</distortionK2>
+			<distortionK3>1.0</distortionK3>
+			<distortionT1>1.0</distortionT1>
+			<distortionT2>1.0</distortionT2>
+		  </plugin>
+		  
+		 <plugin name="kinect" filename="libgazebo_ros_openni_kinect.so">
+			<CxPrime>0</CxPrime>
+			<updateRate>10.0</updateRate>
+			<imageTopicName>image_raw</imageTopicName>
+			<pointCloudTopicName>points</pointCloudTopicName>
+			<depthImageTopicName>image_depth</depthImageTopicName>
+			<depthImageCameraInfoTopicName>depth_camera_info</depthImageCameraInfoTopicName>
+			<pointCloudCutoff>0.001</pointCloudCutoff>
+			<cameraName>kinect</cameraName>
+			<frameName>/base_link</frameName>
+			<distortionK1>0.00000001</distortionK1>
+			<distortionK2>0.00000001</distortionK2>
+			<distortionK3>0.00000001</distortionK3>
+			<distortionT1>0.00000001</distortionT1>
+			<distortionT2>0.00000001</distortionT2>
+		  </plugin>
+		  
+		</sensor>
+	  
+	</link>
+
+  </model>
+  
+</sdf>

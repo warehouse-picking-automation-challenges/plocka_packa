@@ -1,0 +1,3 @@
+Uint16 marker_num
+---
+geometry_msgs/PoseStamped position

@@ -1,0 +1,30 @@
+zone0:
+  name: col1
+  x: -0.55
+  y: -0.25
+  w: 0
+zone1:
+  name: col2
+  x: -0.55
+  y: -0.7
+  w: 0
+zone2:
+  name: col3
+  x: -0.55
+  y: -0.55
+  w: 0
+zone3:
+  name: tool
+  x: -0.8
+  y: -0.45
+  w: -0.75
+zone4:
+  name: center
+  x: -0.8
+  y: -0.7
+  w: 0
+zone5:
+  name: bin
+  x: -0.8
+  y: -0.45
+  w: -0.75

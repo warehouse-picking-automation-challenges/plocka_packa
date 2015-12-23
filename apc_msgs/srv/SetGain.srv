@@ -1,0 +1,15 @@
+string arm
+float64 p_gain_x
+float64 p_gain_y
+float64 p_gain_z
+float64 p_gain_roll
+float64 p_gain_pitch
+float64 p_gain_yaw
+float64 d_gain_x
+float64 d_gain_y
+float64 d_gain_z
+float64 d_gain_roll
+float64 d_gain_pitch
+float64 d_gain_yaw
+---
+bool success

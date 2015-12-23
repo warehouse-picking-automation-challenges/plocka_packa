@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Avoids race condition that occurs with "roslaunch pr2_gazebo pr2_empty_world.launch" -->
+  
+  <!-- Allows user to load a custom world instead of the default "empty.world" -->
+  <arg name="world_already_loaded" default="false"/>
+
+  <!-- Start world -->  
+  <include file="$(find apc_simulator)/launch/pr2_gazebo_launch/pr2_empty_world_part1.launch">
+	<arg name="world_already_loaded" value="$(arg world_already_loaded)" />
+  </include>
+
+  <!-- Load Controllers after a delay -->
+  <node pkg="apc_simulator" type="timed_roslaunch.sh" 
+    args="11 apc_simulator pr2_empty_world_part2.launch" 
+    name="timed_roslaunch" output="screen">
+  </node>
+
+</launch>
+

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+	
+	<!-- launch APC Shelf Tracker -->
+	<rosparam file="$(find apc_shelf)/conf/tracker_params.yaml" command="load" />
+	<node name="shelf_detection" pkg="apc_shelf" type="shelf_detection" output="screen"/>
+
+</launch>

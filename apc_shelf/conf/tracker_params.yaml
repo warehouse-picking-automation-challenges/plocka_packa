@@ -1,0 +1,78 @@
+tracker:
+
+    # Tracker type
+    # Particle    : 0
+    # Normal      : 1
+    # ICP         : 2
+    type          : 2
+
+    zero_init     : false
+    x_shelf       : -0.226453
+    y_shelf       : -0.0462694
+    z_shelf       :  1.3426    
+    r_shelf       :  0.0       
+    p_shelf       :  0.0       
+    w_shelf       :  0.0       
+
+    loop_rate     : 10
+
+    # Pass through filter
+    x_min         : -5.0  # -0.2
+    x_max         :  5.0  #  0.5
+    y_min         : -5.0  # -5.0
+    y_max         :  2.0  #  0.2
+    z_min         :  0.0  # -0.2
+    z_max         :  3.0  #  5.0
+    
+    base_frame    : "/odom_combined"
+    shelf_frame   : "/shelf_origin"
+    kinect_frame  : "/head_mount_kinect_rgb_optical_frame"
+   
+    pcdFileName   : "shelf_1.pcd"
+    saveFileName  : "shelf_99.pcd"
+   
+    transformClouds : false
+    savePCD         : false
+
+    downsampling_grid_size :  0.05
+
+    #std::vector<double> default_step_covariance = std::vector<double> (6, 0.015 * 0.015)
+    #default_step_covariance[3] *= 40.0
+    #default_step_covariance[4] *= 40.0
+    #default_step_covariance[5] *= 40.0
+
+    #std::vector<double> initial_noise_covariance = std::vector<double> (6, 0.00001);
+    #std::vector<double> default_initial_mean = std::vector<double> (6, 0.0);
+    
+    # bin_size
+    bin_size:
+        x     : 0.1
+        y     : 0.1
+        z     : 0.1
+        roll  : 0.1
+        pitch : 0.1
+        yaw   : 0.1
+    
+    # Set all parameters for  KLDAdaptiveParticleFilterOMPTracker
+    maximumParticleNum : 500      
+    delta              : 0.99     
+    epsilon            : 0.2
+
+    # Set all parameters for  ParticleFilter
+#   StepNoiseCovariance    : 
+#   InitialNoiseCovariance : 
+#   InitialNoiseMean       : 
+    iterationNum           : 1    
+    particleNum            : 100   
+    resampleLikelihoodThr  : 0.00 
+    useNormal              : false
+
+    # ICP params
+    icpMaxCorrespondenceDistance : 0.05
+    icpMaximumIterations         : 50  
+    icpTransformationEpsilon     : 1.0e-8
+    icpEuclideanFitnessEpsilon   : 1
+
+
+
+

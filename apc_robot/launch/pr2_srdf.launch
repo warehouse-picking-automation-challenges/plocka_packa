@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="robot"  default="pr2" />
+
+  <!-- The semantic description that corresponds to the URDF -->
+  <param name="robot_description_semantic" textfile="$(find apc_robot)/cfg/$(arg robot).srdf" />
+
+</launch>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<sdf version="1.3">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    
+    
+    <include>
+        <uri>model://kiva_pod</uri>
+        <name>shelf_1</name>
+        <pose>1.5 0 0 0 0 1.5708</pose>
+    </include>
+    
+    
+  </world>
+</sdf>

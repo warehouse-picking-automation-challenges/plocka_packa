@@ -1,0 +1,15 @@
+{
+ "name": "feline_greenies_dental_treats", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "front", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "vacuum"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- set laser tilt rate 
+  <node pkg="pr2_mechanism_controllers" type="send_periodic_cmd_srv.py" name="laser_tilt_controller_3dnav_params" args="laser_tilt_controller linear 3 .75 .25" />-->
+  
+
+  <!-- convert tilt laser scan to pointcloud -->
+    <node pkg="laser_assembler" type="laser_scan_assembler" output="screen"  name="laser_scan_assembler">
+    <param name="tf_cache_time_secs" type="double" value="475.0" />
+    <param name="max_scans" type="int" value="400" />
+    <param name="ignore_laser_skew" type="bool" value="true" />
+    <param name="fixed_frame" type="string" value="/odom_combined" />
+  </node>
+
+</launch>

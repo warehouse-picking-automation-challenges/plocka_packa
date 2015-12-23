@@ -1,0 +1,15 @@
+{
+ "name": "kong_sitting_frog_dog_toy", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "angledLift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

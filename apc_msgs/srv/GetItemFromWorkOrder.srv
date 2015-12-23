@@ -1,0 +1,6 @@
+int32 item_num
+----
+int32 bin
+string item
+int32 item_number
+int32 items_left

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- ####################################################################################-->
+  <!-- Arguments & Parameters -->
+  
+  <arg name="asus" default="false" />
+  <arg name="rviz" default="true" />
+  
+  <!-- ####################################################################################-->
+  <!-- Gripper -->  
+  
+  <include file="$(find apc_baxter)/launch/gripper_action_server.launch">
+    <arg name="run_test" value="false"/>
+  </include>
+
+  <!-- ####################################################################################-->
+  <!-- MoveIt -->  
+  
+  <node name="joint_trajectory_action_server_node" pkg="baxter_interface"
+        type="joint_trajectory_action_server.py" respawn="true"/> 
+  
+  <!-- include file="$(find baxter_moveit_config)/launch/demo_baxter.launch" -->  
+  <include file="$(find apc_baxter)/launch/moveit_demo_baxter.launch">
+    <arg name="kinect" value="false"/>
+    <arg name="rviz" value="$(arg rviz)"/>
+  </include>
+  
+  <!-- Reload the semantic description (it seems to be overwritten somewhere) -->
+  <param name="robot_description_semantic" textfile="$(find apc_baxter)/cfg/baxter.srdf" />
+  
+  <!-- Load IKFast solver ? --> 
+  <!-- <rosparam command="load" file="$(find apc_baxter)/cfg/kinematics.yaml"/> --> 
+
+    
+  <!-- ####################################################################################-->
+  <!-- Launch ASUS and perception-->
+  <group if="$(arg asus)">
+     
+     <include file="$(find apc_baxter)/launch/asus.launch" />
+     
+  </group>
+  
+  <node name="kinect_tf_publisher_node" pkg="apc_baxter" type="kinecthand_tf_publisher" respawn="true"/> 
+  
+  
+  <!-- ####################################################################################-->  
+</launch>

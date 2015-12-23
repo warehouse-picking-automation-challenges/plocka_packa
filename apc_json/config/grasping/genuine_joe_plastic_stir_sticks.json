@@ -1,0 +1,15 @@
+{
+ "name": "genuine_joe_plastic_stir_sticks", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "front", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "vacuum"
+  }
+ ]
+}

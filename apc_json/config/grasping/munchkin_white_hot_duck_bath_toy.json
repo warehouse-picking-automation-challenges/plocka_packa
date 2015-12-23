@@ -1,0 +1,15 @@
+{
+ "name": "munchkin_white_hot_duck_bath_toy", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "angledLift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "electric"
+  }
+ ]
+}

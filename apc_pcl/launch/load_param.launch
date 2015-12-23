@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<rosparam file="$(find apc_pcl)/cfg/passthrough_filter.yaml" command="load" />
+
+</launch>

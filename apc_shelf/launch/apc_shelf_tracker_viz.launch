@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<!-- launch Rviz -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find apc_shelf)/rviz/shelf_track_viz.rviz"/>
+
+</launch>

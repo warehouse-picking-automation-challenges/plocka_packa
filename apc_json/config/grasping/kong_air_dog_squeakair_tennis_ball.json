@@ -1,0 +1,15 @@
+{
+ "name": "kong_air_dog_squeakair_tennis_ball", 
+ "strategies": [
+  {
+   "bins": [
+    0
+   ], 
+   "grasp": "angledLift", 
+   "orientation": [
+    "all"
+   ], 
+   "tool": "vacuum"
+  }
+ ]
+}

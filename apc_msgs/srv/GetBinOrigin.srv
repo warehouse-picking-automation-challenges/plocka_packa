@@ -1,0 +1,4 @@
+int32 bin_number
+string frame
+---
+geometry_msgs/Point point

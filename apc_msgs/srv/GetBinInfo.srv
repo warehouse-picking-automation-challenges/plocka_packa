@@ -1,0 +1,10 @@
+int32 bin_number
+string frame
+---
+geometry_msgs/Point center
+geometry_msgs/Point o
+geometry_msgs/Point a
+geometry_msgs/Point b
+geometry_msgs/Point c
+float64 width
+float64 height
