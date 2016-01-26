@@ -1,6 +1,15 @@
 # Amazon Picking Challenge (APC)
 
-ROS packages developed by Team Plocka Packa for the 2015 Amazon Picking Challenge.  
+This repository contains software developed by *Plocka Packa* for the 2015 Amazon Picking Challenge. The team members were part of the [Next Generation Microsystems and Robots](http://www.uta.edu/ee/ngs/ "NGS") Group headed by UT Arlington Electrical Engineering Professor [Dan Popa](https://www.linkedin.com/in/dan-popa-34361310 "https://www.linkedin.com/"):
+* [Sven Cremer](http://www.svencremer.com/ "http://www.svencremer.com/")
+* [Isura Ranatunga](http://isura.me/ "http://isura.me/")
+* [Sumit Das](https://www.linkedin.com/profile/view?id=318963960 "https://www.linkedin.com/")
+* [Fahad Mirza](https://www.linkedin.com/pub/fahad-mirza/29/aa2/98b "https://www.linkedin.com/")
+* Rommel Alonzo
+* Joshua Baptist
+
+## Platform
+The master branch is compatible with the PR2 robotic platform running ROS Groovy in Ubuntu 12.04. All packages use the *catkin* build system.
 
 ## ROS Packages
   * *apc_cortex*: contains state machine nodes
@@ -15,13 +24,6 @@ ROS packages developed by Team Plocka Packa for the 2015 Amazon Picking Challeng
   * *apc_simulator*: launches Gazebo simulation environments for testing
   * *apc_workspace*: scripts and configuration files for setting up workspace
   * *libraries*: third-party software (mainly used by the *apc_vacuum* package)
-
-## ROS versions
-All versions are using the *catkin* build system.
-
-  * *groovy*: deprecated
-  * *indigo*: old branch for baxter
-  * **groovy-pr2**: main branch
 
 # Install ROS
 Install ROS Groovy on a Ubuntu 12.04 machine using the instructions available at
